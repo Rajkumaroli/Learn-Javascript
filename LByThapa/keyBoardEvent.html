@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event Example</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+           background-color: rgb(210, 232, 232);
+           width: 100%;
+           height: 100vh;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
+        input{
+            width: 30%;
+            height: 10%;
+            border: 2px solid green;
+            font-size: 40px;
+            margin-top: 20px;
+        }
+        p{
+            background-color: green;
+            width: 30%;
+            height: 2px;
+            margin-top: 0 !important;
+            padding-top: 0;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="main">
+       <h2>Some Keyboard Event Here</h2>
+       <p></p>
+       <input type="text" onkeydown="keyDown()">
+       <input type="text" onkeypress="keyPress()">
+       <input type="text" onkeyup="keyUp()">
+    </div>
+</body>
+<script>
+  //For onkeydown Event
+  const keyDown = ()=>{
+    alert("KeyDown is Working!");
+    console.log("KeyDown is Working");
+  }
+  //For onkeypress Event
+  const keyPress = ()=>{
+    alert("KeyPress is Working!");
+    console.log("KeyPress is Working");
+  }
+
+  //For Onkeyup Event
+  const keyUp = ()=>{
+    alert("KeyUp Event is Working!");
+  }
+
+</script>
+</html>

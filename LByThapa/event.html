@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Example</title>
+    <!--CSS Here-->
+    <style>
+       *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       }
+       .main{
+        background-color: rgb(243, 201, 201);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+       }
+       button{
+        background-color: aqua;
+        padding: 20px 55px;
+        cursor: pointer;
+        width: 200px;
+        height: 60px;
+       }
+       button:hover{
+        background-color: chartreuse;
+       }
+    </style>
+</head>
+<body>
+    <div class="main">
+       <button class="firstWay" onclick="alert('I Am a Event using First Way!')">First Way</button>
+       <button class="secondWay" onclick="secondWay()">Second Way</button>
+       <button id="thirdWay">Third Way</button>
+       <button class="fourthWay">Fourth Way</button>
+    </div>
+</body>
+<!-- Javascript Here -->
+<script>
+    //Second Way For Define an Event
+    const secondWay = ()=>{
+        alert("I Am a Event using Second Way!")
+    }
+
+    //Third Way For Define an Event
+    const thirdWay = document.getElementById("thirdWay");
+    thirdWay.onclick = function(){
+        alert("I Am a Event using Third Way!");
+    }
+    thirdWay.onclick = function(){
+        console.log("I am Not working")
+    }
+
+    //Fourth Way For Define an Event
+    const fourthWay = document.querySelector(".fourthWay");
+    fourthWay.addEventListener("click",()=>{
+        alert("I Am a Event using Fourth Way!");
+    })
+
+    fourthWay.addEventListener("click",()=>{
+        console.log("I Am Working");
+    })
+
+</script>
+</html>

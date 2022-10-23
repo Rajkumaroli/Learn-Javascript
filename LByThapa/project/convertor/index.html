@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="calculateTemp(); return false;" class="main">
+            <label>Please enter the temperature you'd like to convert</label>
+            <div class="inputs">
+                <input type="number" id="num">
+                <select id="sinput">
+                    <option value="fah">°Fahrenheit</option>
+                    <option value="cel">°Celsius</option>
+                </select>
+            </div>
+            <button  id="btn" type="submit">Submit</button>
+            <h3 id="output"></h3>
+        </form>
+    </div>
+    
+</body>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Event Examples</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* gap: 16px; */
+            justify-content: center;
+            align-items: center;
+        }
+        .text{
+            background-color: skyblue;
+            width: 40%;
+            height: 14%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 16px;
+        }
+        h2{
+            width: 70%;
+            border-bottom: 1px solid purple;
+            font-size: 25px;
+        }
+        h3{
+            margin-top: 10px;
+            font-size: 22px;
+        }
+        .btn{
+            background-color: skyblue;
+            width: 40%;
+            height: 18%;
+            padding-left: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+        }
+        button{
+            background-color: purple;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: 2px solid green;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(168, 232, 168);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="text">
+            <h2>Timimg Event Here Here</h2>
+            <h3>Now Time: <span id="time"></span></h3>
+        </div>
+        <div class="btn">
+            <button onclick="st=setInterval(startTime,1000)">Start</button>
+            <button id="stop" onclick="clearInterval(st)">Stop</button>
+            <button onclick="stp = setTimeout(myfunc,3000)">Try it</button>
+            <button onclick="clearTimeout(stp)">Stop it</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    const time = document.getElementById("time");
+    //For setInterval
+    function startTime() {
+        const date = new Date();
+        time.innerHTML = date.toLocaleTimeString();
+    }
+    //For setTimeOut
+    function myfunc() {
+        alert("Hello Raj!! What Are You Doing Now?");
+    }
+</script>
+
+</html>

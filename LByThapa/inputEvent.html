@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Input Event Example</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .row1{
+            /* background-color: red; */
+            width: 40%;
+            height: 34%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        h5{
+            /* background-color: red; */
+            text-align: center;
+            width: 60%;
+            border-bottom: 2px solid green;
+            font-size: 30px;
+        }
+        label{
+            font-size: 25px;
+        }
+        #text{
+            background-color: rgb(233, 211, 211);
+            width: 100%;
+            height: 60px;
+            border: 2px solid purple;
+        }
+        #country{
+            background-color: rgb(233, 211, 211);
+            width: 100%;
+            height: 60px;
+            border: 2px solid purple;
+        }
+        option{
+            background-color: rgb(200, 201, 206);
+            font-size: 14px;
+        }
+        .row2{
+            /* background-color: green; */
+            width: 40%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #email{
+            background-color: rgb(233, 211, 211);
+            width: 100%;
+            height: 50px;
+            border: 2px solid purple;
+        }
+        h4{
+            font-size: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="row1">
+           <center><h5>onchange Event Here</h5></center>
+           <label>Your Name:</label> 
+           <input type="text" id="text">
+            <label>Select Your Country:</label>
+            <select id="country" onchange="changeEvent()">
+                <option>Nepal</option>
+                <option>India</option>
+                <option>China</option>
+                <option>USA</option>
+                <optio>UK</optio>
+            </select>
+            <h3></h3>
+        </div>
+        <div class="row2">
+            <center><h5>oninput Event Here</h5></center>
+            <label>Your Email:</label>
+            <input type="email" id="email" oninput="myFunc()">
+            <h4></h4>
+        </div>
+    </div>
+</body>
+
+<script>
+    //For onchange Event
+    const changeEvent = () => {
+        const name = document.getElementById("text").value;
+        const country = document.getElementById("country").value;
+        const output = document.querySelector("h3");
+        output.innerHTML = `My Name is ${name} and I am From ${country}`
+    }
+
+    //For oninput Event
+    const myFunc = ()=>{
+      const email = document.getElementById("email").value;
+      const setEmail = document.querySelector("h4");
+      setEmail.innerHTML = `Email: ${email}`;
+    }
+</script>
+
+</html>

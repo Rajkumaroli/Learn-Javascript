@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event Example</title>
+    <style>
+        .row{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-left: 40%;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2 onmousedown="mouseDown()" onmouseup="mouseUp()">pariatur neque debitis deleniti ad provident sed. Sunt facere maxime maiores impedit harum tempore hic, nam voluptate nostrum animi architecto vitae aut, neque assumenda quidem molestias at quibusdam.
+        Modi consequuntur fugit recusandae dignissimos natus ea cum id rem, maxime voluptatibus tenetur sequi voluptatem est non accusantium quae odit nam reiciendis! Voluptatum, ducimus et. Ullam architecto consequatur molestias. Amet.
+        Adipisci tempore repudiandae necessitatibus, at eius dicta architecto aliquam itaque eveniet dolorum, perferendis dolores voluptatibus quis asperiores a commodi quaerat odit magni? Commodi eveniet voluptatibus obcaecati magni debitis sit dolore!</h2>
+        <div class="row"></div>
+    </div>
+</body>
+<script>
+ const mouseDown = ()=>{
+    document.querySelector("h2").style.color="red";
+ }
+
+ const mouseUp = ()=>{
+    document.querySelector("h2").style.color="green";
+ }
+
+ const row1 = document.querySelector(".row");
+ row1.addEventListener("mouseenter",()=>{
+    row1.style.backgroundColor="green";
+ })
+
+ row1.addEventListener("mouseleave",()=>{
+    row1.style.backgroundColor="grey";
+ })
+</script>
+</html>

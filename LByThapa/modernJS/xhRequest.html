@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest Example</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: skyblue;
+            width: 50%;
+            padding: 30px;
+        }
+        img{
+            width: 20%;
+            height: 20%;
+            border: 2px solid purple;
+            border-radius: 5px;
+        }
+        p{
+            width: 30%;
+            height: auto;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+       
+    </div>
+</body>
+<script>
+    const container = document.getElementById("container");
+    const request = new XMLHttpRequest();
+    request.open("GET","https://62bd8db5c5ad14c110c16cc2.mockapi.io/product");
+    request.send();
+    //To get Response 
+    request.addEventListener("load",function(){
+        // console.log(this.responseText);
+        const [data] = JSON.parse(this.responseText);
+        // console.log(data);
+        const htmlData = ` 
+        <div class="main">
+            <img src=${data.thumbnail} alt="">
+            <h1>${data.name}</h1>
+            <h4>Price:${data.price}</h4>
+            <p>Description:${data.description}</p>
+        </div>`
+        container.insertAdjacentHTML("afterbegin",htmlData);
+    });
+</script>
+</html>
